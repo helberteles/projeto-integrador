@@ -1,0 +1,189 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-11-07T18:30:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2024.5.0",
+  "resources": [
+    {
+      "_id": "wrk_pi_fase2",
+      "_type": "workspace",
+      "name": "Projeto Integrador - Fase 2",
+      "description": "Testes da API de produtos, fornecedores e associações.",
+      "scope": "collection"
+    },
+    {
+      "_id": "env_pi_fase2",
+      "_type": "environment",
+      "parentId": "wrk_pi_fase2",
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:3000/api"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1
+    },
+    {
+      "_id": "req_health",
+      "_type": "request",
+      "parentId": "wrk_pi_fase2",
+      "name": "Verificar API",
+      "method": "GET",
+      "url": "{{ _.base_url }}/health",
+      "headers": [],
+      "body": {},
+      "authentication": {},
+      "metaSortKey": 2,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global"
+    },
+    {
+      "_id": "req_produtos",
+      "_type": "request",
+      "parentId": "wrk_pi_fase2",
+      "name": "Listar produtos",
+      "method": "GET",
+      "url": "{{ _.base_url }}/produtos",
+      "headers": [],
+      "body": {},
+      "authentication": {},
+      "metaSortKey": 3,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global"
+    },
+    {
+      "_id": "req_produto_post",
+      "_type": "request",
+      "parentId": "wrk_pi_fase2",
+      "name": "Cadastrar produto",
+      "method": "POST",
+      "url": "{{ _.base_url }}/produtos",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Headset USB\",\n  \"descricao\": \"Headset com microfone\",\n  \"preco\": 159.9,\n  \"codigo_barras\": \"789000000010\"\n}"
+      },
+      "authentication": {},
+      "metaSortKey": 4,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global"
+    },
+    {
+      "_id": "req_fornecedores",
+      "_type": "request",
+      "parentId": "wrk_pi_fase2",
+      "name": "Listar fornecedores",
+      "method": "GET",
+      "url": "{{ _.base_url }}/fornecedores",
+      "headers": [],
+      "body": {},
+      "authentication": {},
+      "metaSortKey": 5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global"
+    },
+    {
+      "_id": "req_fornecedor_post",
+      "_type": "request",
+      "parentId": "wrk_pi_fase2",
+      "name": "Cadastrar fornecedor",
+      "method": "POST",
+      "url": "{{ _.base_url }}/fornecedores",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Fornecedor Exemplo Ltda.\",\n  \"cnpj\": \"45.678.901/0001-23\",\n  \"endereco\": \"Rua Central, 100 - São Paulo/SP\",\n  \"contato\": \"(11) 4000-5000\"\n}"
+      },
+      "authentication": {},
+      "metaSortKey": 6,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global"
+    },
+    {
+      "_id": "req_associacoes",
+      "_type": "request",
+      "parentId": "wrk_pi_fase2",
+      "name": "Listar associações",
+      "method": "GET",
+      "url": "{{ _.base_url }}/associacoes",
+      "headers": [],
+      "body": {},
+      "authentication": {},
+      "metaSortKey": 7,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global"
+    },
+    {
+      "_id": "req_associacao_post",
+      "_type": "request",
+      "parentId": "wrk_pi_fase2",
+      "name": "Criar associação (produto 1 / fornecedor 1)",
+      "method": "POST",
+      "url": "{{ _.base_url }}/associacoes",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"produto_id\": 1,\n  \"fornecedor_id\": 1\n}"
+      },
+      "authentication": {},
+      "metaSortKey": 8,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global"
+    }
+  ]
+}
